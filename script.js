@@ -2,12 +2,18 @@ document.getElementById('myForm').addEventListener('submit', function(event) {
     event.preventDefault(); // Impede o envio do formulário padrão
     
     // Captura os valores dos campos de entrada
-    var campo1 = document.getElementById('campo1').value;
-    var campo2 = document.getElementById('campo2').value;
+    var entrega = document.getElementById('entrega').value;
+    var cep = document.getElementById('cep').value;
+    var rural = document.getElementById('rural').checked;
 
-    // Processa os dados (aqui você pode fazer cálculos ou qualquer outra manipulação necessária)
-    var resultado = parseInt(campo1) + parseInt(campo2);
+    // Formata o CEP para o formato XXXXX-XXX
+    cep = cep.replace(/\D/g, ''); // Remove caracteres não numéricos
+    cep = cep.substring(0, 5) + '-' + cep.substring(5); // Insere o traço na posição correta
 
     // Exibe os resultados
-    document.getElementById('resultado').innerHTML = 'Resultado: ' + resultado;
+    document.getElementById('resultado').innerHTML = `
+        <p>Entrega: ${entrega}</p>
+        <p>CEP: ${cep}</p>
+        <p>Região Rural: ${rural ? 'Sim' : 'Não'}</p>
+    `;
 });
