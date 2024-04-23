@@ -42,3 +42,8 @@ button:hover {
 #resultado {
     margin-top: 20px;
 }
+
+.rural-checkbox {
+    margin-top: 10px; /* Adiciona um espaço entre o campo CEP e o checkbox Região Rural */
+}
+
