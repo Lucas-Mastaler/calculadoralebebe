@@ -24,7 +24,7 @@ document.getElementById('myForm').addEventListener('submit', function(event) {
 });
 
 function calcularQuilometragem(origem, destino, callback) {
-    var url = 'https://maps.googleapis.com/maps/api/distancematrix/json?units=metric&origins=' + origem + '&destinations=' + destino + '&key=SUA_CHAVE_API';
+    var url = 'https://maps.googleapis.com/maps/api/distancematrix/json?units=metric&origins=' + origem + '&destinations=' + destino + '&key=AIzaSyAP4ZC1m9mvt_xg_pQZbPd8vnreoJk5XnY';
 
     // Faz a requisição à API do Google Maps
     fetch(url)
