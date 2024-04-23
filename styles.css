@@ -23,7 +23,7 @@ input[type="checkbox"] {
 
 /* Ajuste de tamanho para o campo de CEP */
 #cep {
-    width: calc(100% - 60px); /* Define o tamanho do campo de CEP */
+    width: calc(100% - 8px); /* Define o tamanho do campo de CEP */
 }
 
 button {
