@@ -1,6 +1,6 @@
 document.getElementById('myForm').addEventListener('submit', function(event) {
     event.preventDefault(); // Impede o envio do formulário padrão
-    
+
     // Captura os valores dos campos de entrada
     var entrega = document.getElementById('entrega').value;
     var cep = document.getElementById('cep').value;
@@ -31,11 +31,12 @@ function calcularQuilometragem(origem, destino, callback) {
         .then(response => response.json())
         .then(data => {
             // Verifica se a resposta é válida e se há distância disponível
-            if (data.status === 'OK' && data.rows.length > 0 && data.rows[0].elements.length > 0) {
+            if (data.status === 'OK' && data.rows.length > 0 && data.rows[0].elements.length > 0 && data.rows[0].elements[0].status === 'OK') {
                 var quilometragem = data.rows[0].elements[0].distance.text;
                 callback(quilometragem);
             } else {
-                callback('Erro ao calcular a quilometragem');
+                console.error('Erro ao calcular a quilometragem:', data.error_message);
+                callback('Erro');
             }
         })
         .catch(error => {
